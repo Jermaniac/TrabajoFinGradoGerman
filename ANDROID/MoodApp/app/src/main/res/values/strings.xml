@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MoodApp</string>
+    <string name="mensaje_bienvenida">Bienvenido</string>
+    <string name="mensaje_instruccion">Pulse para empezar.</string>
+    <string name="mensaje_explicacion">Esta aplicación realiza fotos de rostros y trata de adivinar cual es la expresión facial.</string>
+    <string name="title_activity_info">ActivityInfo</string>
+    <string name="mensaje_empezar">EMPEZAR</string>
+</resources>
