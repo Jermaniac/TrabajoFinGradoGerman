@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MoodAppv2</string>
+    <string name="mensaje_bienvenida">Bienvenido</string>
+    <string name="mensaje_instruccion">Pulse para empezar.</string>
+    <string name="mensaje_explicacion">Esta aplicación realiza fotos de rostros y trata de adivinar cual es la expresión facial.</string>
+    <string name="title_activity_info">ActivityInfo</string>
+    <string name="mensaje_empezar">EMPEZAR</string>
+    <string name="description_foto">FOTO</string>
+    <string name="description_expression">EXPRESIÓN FACIAL</string>
+    <string name="description_grafica">GRÁFICA PROBABILIDADES</string>
+    <string name="mensaje_instrucciones">Puede seleccionar o bien escoger una foto de la galería del sistema o bien tomarse una foto usando la cámara del dispositivo.</string>
+</resources>
