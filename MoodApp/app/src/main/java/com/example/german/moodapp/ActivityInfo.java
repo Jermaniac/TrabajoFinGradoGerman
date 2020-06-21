@@ -48,7 +48,7 @@ public class ActivityInfo extends AppCompatActivity {
     // Grafico
     private HorizontalBarChart chart;
     // atributo que indica la ip donde se va a realizar la peticion
-    private String ip = "http://192.168.1.35:9004/";
+    private String ip = "http://192.168.1.40:9004/";
     // variables para distinguir galeria y camara
     private static final int SELECT_IMAGE_GALLERY= 0;
     private static final int REQUEST_IMAGE_CAPTURE= 1;
