@@ -1,4 +1,4 @@
-# ProyectoFinGrado
+# ProyectoFinGrado: Reconocimiento de expresiones faciales con Machine Learning
 Este es el repositorio que contiene el código correspondiente al proyecto de fin de grado de Germán González Garzón.
 
 Se trata de una aplicación en Android que reconoce siete expresiones faciales (enfadado, disgustado, asustado, feliz, triste, sorprendido, neutral) a partir de una fotografía utilizando una red neuronal convolucional o CNN.
