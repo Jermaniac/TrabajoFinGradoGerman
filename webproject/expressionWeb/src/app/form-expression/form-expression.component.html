@@ -1,0 +1,9 @@
+<form>
+
+    <div class="row">
+        <label for="photo" >Upload your photo</label>
+        <input type="file" accept="image/*" (change)="getExpressions($event)">
+        <img [src]="urlImage" heigth="200">
+    </div>
+
+</form>

@@ -6,7 +6,7 @@ RUN pip install -U \
     bottle \
     pillow
 
-CMD ["python", "serverscript.py"]
+# CMD ["python", "serverscript.py"]
 
 EXPOSE 9004
 

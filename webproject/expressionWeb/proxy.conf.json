@@ -1,0 +1,7 @@
+{
+    "/getMood":{
+        "target":"http://172.17.0.2:9004",
+        "secure":false,
+        "changeOrigin":true
+    }
+}

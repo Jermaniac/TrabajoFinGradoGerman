@@ -1,0 +1,13 @@
+<div class="container">
+
+    <div class="row" *ngFor="let expression of expressions">
+
+        <div class="col-12">
+            <input type="range" min="0" max="100" value="{{expression.probability*100| number : '1.2-2'}}" class="control-range col-8" id="rangeMood" >
+            <span class="badge badge-pill badge-primary col-1">{{expression.probability*100| number : '1.2-2'}}</span>
+            <span class="badge col-1">{{expression.mood}}</span>
+        </div>
+
+    </div>
+    
+</div>
