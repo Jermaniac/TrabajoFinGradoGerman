@@ -1,7 +1,7 @@
 <div class="container">
 
     <!-- Calling the child components: formComponent will make the api calls and infoComponent for printing the result-->
-    <app-form-expression (expressionEvent)="receiveExpressions($event)"></app-form-expression>
+    <app-expression-form (expressionEvent)="receiveExpressions($event)"></app-expression-form>
     <app-expression-info [expressions]="theExpressions.expressions"></app-expression-info>
 
 </div>

@@ -8,6 +8,9 @@ import { ExpressionsArray } from '../expressions-array';
 })
 export class ExpressionAppComponent implements OnInit {
 
+  //TO DO
+  // PONER VERDE LA BARRA CON MAYOR PROBABILIDAD ( MAYBE ORDER)
+  // HACER LA LLAMADA AL API REST AL HACER CLICK EN BOTON PREDICT Y NO AL SUBIR FOTO
 
   // Parent variable for store the result of the predictions, this variable will be passed to the other child components
   theExpressions :  ExpressionsArray = {

@@ -10,14 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { ExpressionInfoComponent } from './expression-info/expression-info.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FormExpressionComponent } from './form-expression/form-expression.component'
+import { ExpressionFormComponent } from './expression-form/expression-form.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpressionAppComponent,
     ExpressionInfoComponent,
-    FormExpressionComponent
+    ExpressionFormComponent
   ],
   imports: [
     BrowserModule,

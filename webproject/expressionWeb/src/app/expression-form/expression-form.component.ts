@@ -1,13 +1,13 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ExpressionManagementService } from '../expression-management.service';
 import { ExpressionsArray } from '../expressions-array';
-
 @Component({
-  selector: 'app-form-expression',
-  templateUrl: './form-expression.component.html',
-  styleUrls: ['./form-expression.component.css']
+  selector: 'app-expression-form',
+  templateUrl: './expression-form.component.html',
+  styleUrls: ['./expression-form.component.css']
 })
-export class FormExpressionComponent implements OnInit {
+export class ExpressionFormComponent implements OnInit {
+
 
   // An EventEmitter with @Output anotation is required to share the expressions to the parent component from the api call
   @Output() expressionEvent = new EventEmitter <ExpressionsArray>();
@@ -50,5 +50,4 @@ export class FormExpressionComponent implements OnInit {
     );
 
   }
-
 }
