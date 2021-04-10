@@ -1,9 +1,14 @@
-<form>
+<div class="container">
 
-    <div class="row">
-        <label for="photo" >Upload your photo</label>
-        <input type="file" accept="image/*" (change)="getExpressions($event)">
-        <img [src]="urlImage" heigth="200">
+    <h2>Upload the photo you want to be predicted</h2>
+    <h3>Click on the image below</h3>
+    <label for="photo"  >
+        <input type="file" name="photo" id="photo" accept="image/*" (change)="previewPhoto($event)" style="display:none;" >
+        <img [src]="urlImage" heigth="200" width="200">
+    </label>
+    <div id="buttonSubmit">
+        <button class="btn btn-primary" (click)="requestPredict()">PREDICT THIS PHOTO</button>
     </div>
-
-</form>
+    
+</div>
+    

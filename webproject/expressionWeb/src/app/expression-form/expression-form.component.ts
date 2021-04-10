@@ -13,7 +13,7 @@ export class ExpressionFormComponent implements OnInit {
   @Output() expressionEvent = new EventEmitter <ExpressionsArray>();
 
   // Image url for preview
-  urlImage : string = "";
+  urlImage : string = "./assets/blankPhoto.png";
 
   // Image container
   photoToPredict : File = null;
@@ -26,7 +26,7 @@ export class ExpressionFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getExpressions ($event) {
+  previewPhoto ($event) {
     // Get the photo file from the form
     let fileList : FileList = $event.target.files;
     this.photoToPredict = fileList[0];
@@ -37,17 +37,24 @@ export class ExpressionFormComponent implements OnInit {
     reader.onload=(event:any)=>{
       this.urlImage=event.target.result;
     }
-
-    // Call API for getting the prediction
-    this.serviceExpressions.getPrediction(this.photoToPredict).subscribe(
-      (data:ExpressionsArray) => {
-        console.log("Getting mood from API ...");
-        this.expressionEvent.emit(data);
-      },
-      (respuestaKo) => {
-        console.log("Call API failed");
-      }
-    );
-
   }
+
+  requestPredict (){
+    if(this.photoToPredict){
+       // Call API for getting the prediction
+       this.serviceExpressions.getPrediction(this.photoToPredict).subscribe(
+        (data:ExpressionsArray) => {
+          console.log("Getting mood from API ...");
+          this.expressionEvent.emit(data);
+        },
+        (respuestaKo) => {
+          console.log("Call API failed");
+        }
+      );
+    }
+    else{
+      alert("Please, select a photo.")
+    }
+  }
+
 }

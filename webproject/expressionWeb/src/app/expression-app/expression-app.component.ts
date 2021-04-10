@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Expression } from '../expression';
 import { ExpressionsArray } from '../expressions-array';
 
 @Component({
@@ -8,9 +9,11 @@ import { ExpressionsArray } from '../expressions-array';
 })
 export class ExpressionAppComponent implements OnInit {
 
-  //TO DO
-  // PONER VERDE LA BARRA CON MAYOR PROBABILIDAD ( MAYBE ORDER)
-  // HACER LA LLAMADA AL API REST AL HACER CLICK EN BOTON PREDICT Y NO AL SUBIR FOTO
+// TO DO
+
+  // QUITAR DISGUST DE LA CNN
+
+  // PONER GIF DE CARGA JS
 
   // Parent variable for store the result of the predictions, this variable will be passed to the other child components
   theExpressions :  ExpressionsArray = {
@@ -18,7 +21,7 @@ export class ExpressionAppComponent implements OnInit {
   };
 
   // Remove when app finished!!! -- For setting up the server api - only for development!!
-  // ng serve --proxy-conf proxy.conf.json
+  // ng serve --proxy-config proxy.conf.json
 
   constructor() { }
 

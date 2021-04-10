@@ -1,0 +1,21 @@
+
+.container-fluid{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.row {
+    /* is this necessary?*/
+    /* box-sizing: border-box; */
+    margin:auto;
+}
+.row > * {
+    border: 1px solid black;
+    padding: 0;
+
+}
+.row > app-expression-form{
+    background-color: lightblue;
+}
+.row > app-expression-info{
+    background-color: lightgrey;
+}

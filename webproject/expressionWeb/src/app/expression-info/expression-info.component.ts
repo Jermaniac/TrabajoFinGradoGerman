@@ -27,12 +27,7 @@ import { Expression } from '../expression';
         transition("start => final",
         [
           animate("1s")
-        ]),
-        transition("final=>start",
-        [
-          animate("1s")
-        ]
-        )
+        ])
       ]
     )
   ]
@@ -49,10 +44,15 @@ export class ExpressionInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // When the photo changes, the probabilities resets
   ngOnChanges(){
     this.animate=true;
+    setTimeout(() => {
+      this.doAnimation();
+    }, 1000);
   }
-  cambiar(){
+  
+  doAnimation(){
       this.animate=!this.animate;
   }
   

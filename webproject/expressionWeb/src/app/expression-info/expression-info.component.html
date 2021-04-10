@@ -1,25 +1,26 @@
-<div class="container mt-4">
+<div class="container-fluid">
 
-    <button class="btn btn-primary" (click)="cambiar()">PREDICT</button>
-
-    <div class="row mt-4" *ngFor="let expression of expressions,let indice=index">
+    <div class="row" *ngFor="let expression of expressions">
 
         <div class="col-12">
             <div class="progress">
                 <div  [@anime]="{
                 value:animate ? 'start' : 'final',
                 params: {widthtest: expression.probability*100 | number :'1.2-2'}
-                }" id="barra" class="progress-bar" aria-valuemin="0" aria-valuemax="100">
-                {{expression.probability*100 | number :'1.2-2'}}</div>
-                <!--JUST IN CASE THE NUMBER PREDICTED IS TOO LOW-->
-                <!-- *ngIf="(expression.probability*100)>1; else notShow"> -->
-                <!-- <ng-template #notShow>
-                    <div *ngIf="!animate" class="progress-bar bg-danger" >
-                        TOO LOW
+                }" id="barra" class="progress-bar" aria-valuemin="0" aria-valuemax="100"
+                *ngIf="(expression.probability*100)< 50; else showWinnerGreen">
+                {{expression.probability*100 | number :'1.2-2'}}%
+                </div>
+                <ng-template #showWinnerGreen>
+                    <div [@anime]="{
+                        value:animate ? 'start' : 'final',
+                        params: {widthtest: expression.probability*100 | number :'1.2-2'}
+                        }" class="progress-bar bg-success" >
+                        {{expression.probability*100 | number :'1.2-2'}}%
                     </div>
-                  </ng-template> -->
+                </ng-template>
+                <span class="badge col-1">{{expression.mood}}</span> 
             </div>
-            <span class="badge col-2">{{expression.mood}}</span> 
         </div>
 
     </div>

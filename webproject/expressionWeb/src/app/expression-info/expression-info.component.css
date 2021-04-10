@@ -1,0 +1,13 @@
+.container-fluid {
+    height: 100%;
+    padding:15px;
+    align-items: center;
+    display: grid;
+}
+
+/* Temporal solution to grid display not working in small devices*/
+@media (max-width: 769px) {
+    .container-fluid > .row {
+        margin-bottom: 20px;
+    }
+}
