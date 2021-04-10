@@ -14,7 +14,7 @@ import numpy as np
 # ### Imports de Bottle para que funcionen las peticiones POST al servidor.
 
 
-from bottle import Bottle,route, run, request
+from bottle import Bottle,route, run, request,response
 
 
 # ### Imports de PIL para abrir la foto y poder manipularla.
@@ -38,7 +38,7 @@ expressions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral'
 
 
 
-ip = '172.17.0.2'
+ip = '0.0.0.0'
 
 
 # # PROGRAMA PRINCIPAL
@@ -109,6 +109,10 @@ print("El modelo ha sido cargado.")
 
 
 app = Bottle()
+@app.hook('after_request')
+def enable_cors():
+    response.headers['Access-Control-Allow-Origin'] = '*'
+
 @app.route("/getMood", method="POST")
 def do_upload():
     

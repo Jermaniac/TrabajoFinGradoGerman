@@ -1,6 +1,6 @@
 {
     "/getMood":{
-        "target":"http://172.17.0.2:9004",
+        "target":"http://ec2-18-207-238-101.compute-1.amazonaws.com:9004",
         "secure":false,
         "changeOrigin":true
     }

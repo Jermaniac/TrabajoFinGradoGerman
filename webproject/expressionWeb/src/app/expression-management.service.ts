@@ -8,14 +8,15 @@ import { Injectable } from '@angular/core';
 export class ExpressionManagementService {
 
   // proxy enabled
-  readonly url : string = "/getMood";
+  // readonly url : string = "/getMood";
 
   // json-server
   // readonly url : string = "http://localhost:3000/expressions";
 
   // AWS
-  // readonly url : string = "http://ec2-3-233-221-186.compute-1.amazonaws.com:9004/getMood";
+  // readonly url : string = "http://ec2-18-207-238-101.compute-1.amazonaws.com:9004/getMood";
 
+  readonly url : string = "http://ec2-18-207-238-101.compute-1.amazonaws.com:9004/getMood";
   // No options required
   // readonly options = {
   //   headers: new HttpHeaders (
