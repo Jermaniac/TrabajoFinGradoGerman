@@ -12,7 +12,6 @@ export class ExpressionAppComponent implements OnInit {
 // TO DO
 
   // QUITAR DISGUST DE LA CNN
-
   // PONER GIF DE CARGA JS
 
   // Parent variable for store the result of the predictions, this variable will be passed to the other child components
