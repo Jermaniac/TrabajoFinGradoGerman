@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Expression } from '../expression';
+import { ExpressionFormComponent } from '../expression-form/expression-form.component';
 import { ExpressionsArray } from '../expressions-array';
 
 @Component({
@@ -19,11 +20,11 @@ export class ExpressionAppComponent implements OnInit {
     expressions: []
   };
 
+  @ViewChild(ExpressionFormComponent) child;  
+
   expressionsAvailable : boolean = false;
 
-  // Remove when app finished!!! -- For setting up the server api - only for development!!
-  // ng serve --proxy-config proxy.conf.json
-
+  urlCurrentImage : string = "";
   constructor() { }
 
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class ExpressionAppComponent implements OnInit {
     if ($event.expressions){
       this.theExpressions=$event;
       this.expressionsAvailable=true;
+      this.urlCurrentImage=this.child.urlImage;
     }
   }
 

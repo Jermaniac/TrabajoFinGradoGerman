@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ExpressionManagementService } from '../expression-management.service';
 import { ExpressionsArray } from '../expressions-array';
 @Component({
@@ -13,7 +13,7 @@ export class ExpressionFormComponent implements OnInit {
   @Output() expressionEvent = new EventEmitter <ExpressionsArray>();
 
   // Image url for preview
-  urlImage : string = "./assets/blankPhoto.png";
+  @Input() urlImage : string = "";
 
   // Image container
   photoToPredict : File = null;
@@ -25,6 +25,9 @@ export class ExpressionFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (!this.urlImage) {
+      this.urlImage = "./assets/blankPhoto.png";
+    }
   }
 
   previewPhoto ($event) {

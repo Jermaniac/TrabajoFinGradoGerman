@@ -1,10 +1,16 @@
 <div class="container-fluid">
 
-    <div class="row">
+    <div class="row" *ngIf="expressionsAvailable;else elseBlock">
 
         <!-- Calling the child components: formComponent will make the api calls and infoComponent for printing the result-->
-        <app-expression-form class="col-12 col-md-4 col-lg-3" (expressionEvent)="receiveExpressions($event)"></app-expression-form>
-        <app-expression-info class="col-12 col-md-8 col-lg-9" [expressions]="theExpressions.expressions" *ngIf="expressionsAvailable"></app-expression-info>
-    
+        <app-expression-form class="col-12 col-md-4 col-lg-3" (expressionEvent)="receiveExpressions($event)" [urlImage]="urlCurrentImage"></app-expression-form>
+        <app-expression-info class="col-12 col-md-8 col-lg-9" [expressions]="theExpressions.expressions" ></app-expression-info>
+        
     </div>
+    <ng-template #elseBlock>
+        <div class="row" >
+        <app-expression-form class="col-12 col-md-12 col-lg-12" (expressionEvent)="receiveExpressions($event)"></app-expression-form>
+    </div>
+    </ng-template>
+
 </div>
