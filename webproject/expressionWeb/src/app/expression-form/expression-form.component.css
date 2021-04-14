@@ -1,18 +1,47 @@
 .container {
-    text-align: center;
     padding: 20px;
 }
-.container > h2,h3{
-    font-weight: 900;
+
+.row {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    margin:10px;
 }
-.container > h2{
+.row > h2,h3{
+    font-weight: 900;
+    font-size: x-large;
+}
+.row > h2{
     font-style: initial;
 }
-.container > h3{
+.row > h3{
     font-style: italic;
 }
+label {
+    width: 100%;
+    margin:0;
+}
+img {
+    width: 100%;
+}
+.spinner-loading {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px );
+    border: 16px solid rgb(107, 107, 133);
+    border-radius: 50%;
+    border-right: 16px solid transparent;
+    animation : spin 2s infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  } 
 
-button {
+#buttonSubmit {
     padding: 10px 10px;
     background-color: #008cff;
     transition: 0.5s;
@@ -20,8 +49,15 @@ button {
     border-color: #008cff;
 }
 
-button:hover {
+#buttonSubmit:hover {
     color: white;
     background: #008cff;
     box-shadow: 0 0 10px #008cff, 0 0 40px #008cff, 0 0 80px #008cff;
 }
+
+
+
+
+
+
+

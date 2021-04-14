@@ -17,7 +17,7 @@ export class ExpressionManagementService {
   // AWS/
   // readonly url : string = "http://ec2-18-207-238-101.compute-1.amazonaws.com:9004/getMood";
 
-  readonly url : string = "http://ec2-3-239-91-220.compute-1.amazonaws.com:9004/getMood";
+  readonly url : string = "http://ec2-3-238-136-111.compute-1.amazonaws.com:9004/getMood";
 
   // No options required
   // readonly options = {
@@ -41,11 +41,11 @@ export class ExpressionManagementService {
       this.url,
       photoForm
     ).pipe(
-      timeout(10000),
+      timeout(5000),
       catchError(e => {
         // If timeout ...
-        alert("Timeout: "+e);
-        return (null);
+        alert("Server took too long to respond: "+e);
+        return ("null");
       }
     )
     )

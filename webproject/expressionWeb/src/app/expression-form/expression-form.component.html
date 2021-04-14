@@ -1,20 +1,32 @@
 <div class="container">
 
-    <h2>Upload the photo you want to be predicted</h2>
-    <h3>Click on the image below</h3>
+    <div class="row">
+        <h2>Upload the photo you want to be predicted</h2>
+    </div>
 
+    <div class="row">
+        <h3>Click on the image</h3>    
+    </div>
     <!-- <webcam [height]="200" [width]="300"></webcam> -->
 
-    <label >
-        <input type="file" name="photo" id="photo" accept="image/*" (change)="previewPhoto($event)" style="display:none;" >
-        <img [src]="urlImage" heigth="200" width="200">
-    </label>
+    <div class="row">
+        <label for="photo">
+            <input type="file" name="photo" id="photo" accept="image/*" (change)="previewPhoto($event)" style="display:none;" >
+            <img [src]="urlImage">
     
-    <div>
+        </label>
+        <div class="spinner-loading" *ngIf="startLoading" >
+        </div>
+    </div>
+
+
+
+    <div class="row">
         <button id="buttonSubmit" (click)="requestPredict()">
             PREDICT THIS PHOTO
         </button>
     </div>
-    
+
 </div>
+
     

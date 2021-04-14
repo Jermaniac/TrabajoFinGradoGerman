@@ -18,6 +18,7 @@ export class ExpressionFormComponent implements OnInit {
   // Image container
   photoToPredict : File = null;
 
+  startLoading : boolean = false;
   // Calling the service for making request
   constructor(
     public serviceExpressions : ExpressionManagementService
@@ -41,14 +42,21 @@ export class ExpressionFormComponent implements OnInit {
 
   requestPredict (){
     if(this.photoToPredict){
+      this.startLoading=true;
        // Call API for getting the prediction
        this.serviceExpressions.getPrediction(this.photoToPredict).subscribe(
         (data:ExpressionsArray) => {
           console.log("Getting mood from API ...");
           this.expressionEvent.emit(data);
         },
-        (respuestaKo) => {
+        (error) => {
           console.log("Call API failed");
+          console.log(error);
+          this.startLoading=false;
+        },
+        () => {
+          console.log("Success!")
+          this.startLoading=false;
         }
       );
     }

@@ -19,6 +19,8 @@ export class ExpressionAppComponent implements OnInit {
     expressions: []
   };
 
+  expressionsAvailable : boolean = false;
+
   // Remove when app finished!!! -- For setting up the server api - only for development!!
   // ng serve --proxy-config proxy.conf.json
 
@@ -29,7 +31,10 @@ export class ExpressionAppComponent implements OnInit {
 
   // Since this component does not make the api call, this method is for getting the expressions from the child who makes the api call.
   receiveExpressions($event: ExpressionsArray){
-    this.theExpressions=$event;
+    if ($event.expressions){
+      this.theExpressions=$event;
+      this.expressionsAvailable=true;
+    }
   }
 
 }
