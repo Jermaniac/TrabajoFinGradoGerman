@@ -15,9 +15,9 @@ export class ExpressionManagementService {
   // readonly url : string = "http://localhost:3000/expressions";
 
   // AWS/
-  // readonly url : string = "http://ec2-18-207-238-101.compute-1.amazonaws.com:9004/getMood";
+  // readonly url : string = "http://LINK:9004/getMood";
 
-  readonly url : string = "http://ec2-3-238-136-111.compute-1.amazonaws.com:9004/getMood";
+  readonly url : string = "http://ec2-3-238-116-41.compute-1.amazonaws.com:9004/getMood";
 
   // No options required
   // readonly options = {
@@ -45,7 +45,7 @@ export class ExpressionManagementService {
       catchError(e => {
         // If timeout ...
         alert("Server took too long to respond: "+e);
-        return ("null");
+        return (null);
       }
     )
     )

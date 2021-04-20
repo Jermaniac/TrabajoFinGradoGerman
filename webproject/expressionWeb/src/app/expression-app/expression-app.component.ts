@@ -14,17 +14,14 @@ export class ExpressionAppComponent implements OnInit {
 
   // QUITAR DISGUST DE LA CNN
   // PONER GIF DE CARGA JS
+  // DIRECTIVA HIGHLIGHT
 
   // Parent variable for store the result of the predictions, this variable will be passed to the other child components
-  theExpressions :  ExpressionsArray = {
-    expressions: []
-  };
+  theExpressions :  ExpressionsArray;
 
-  @ViewChild(ExpressionFormComponent) child;  
+  // FormComponent child variable, it is used to get the url of the image AND the photo file to be predicted
+  @ViewChild(ExpressionFormComponent) child;
 
-  expressionsAvailable : boolean = false;
-
-  urlCurrentImage : string = "";
   constructor() { }
 
   ngOnInit(): void {
@@ -32,10 +29,8 @@ export class ExpressionAppComponent implements OnInit {
 
   // Since this component does not make the api call, this method is for getting the expressions from the child who makes the api call.
   receiveExpressions($event: ExpressionsArray){
-    if ($event.expressions){
+    if ($event){
       this.theExpressions=$event;
-      this.expressionsAvailable=true;
-      this.urlCurrentImage=this.child.urlImage;
     }
   }
 

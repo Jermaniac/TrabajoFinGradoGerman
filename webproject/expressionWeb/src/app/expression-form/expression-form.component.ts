@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ExpressionManagementService } from '../expression-management.service';
 import { ExpressionsArray } from '../expressions-array';
+
+// url of the blank photo png
+const blankphotoPath = './assets/blankPhoto.png';
 @Component({
   selector: 'app-expression-form',
   templateUrl: './expression-form.component.html',
@@ -13,20 +16,25 @@ export class ExpressionFormComponent implements OnInit {
   @Output() expressionEvent = new EventEmitter <ExpressionsArray>();
 
   // Image url for preview
+  // Input to get the previous url
   @Input() urlImage : string = "";
 
   // Image container
-  photoToPredict : File = null;
+  // Input to get the previous photoToPredict
+  @Input() photoToPredict : File = null;
 
+  // trigger for loading spinner
   startLoading : boolean = false;
+
   // Calling the service for making request
   constructor(
     public serviceExpressions : ExpressionManagementService
   ) { }
 
   ngOnInit(): void {
+    // if not image selected for preview, blank photo will be shown
     if (!this.urlImage) {
-      this.urlImage = "./assets/blankPhoto.png";
+      this.urlImage = blankphotoPath;
     }
   }
 
@@ -35,11 +43,17 @@ export class ExpressionFormComponent implements OnInit {
     let fileList : FileList = $event.target.files;
     this.photoToPredict = fileList[0];
 
-    // Show photo preview
-    var reader = new FileReader();
-    reader.readAsDataURL(this.photoToPredict);
-    reader.onload=(event:any)=>{
-      this.urlImage=event.target.result;
+    if (this.photoToPredict){
+      // Show photo preview
+      var reader = new FileReader();
+      reader.readAsDataURL(this.photoToPredict);
+      reader.onload=(event:any)=>{
+        this.urlImage=event.target.result;
+      }
+    }
+    else {
+      alert("Please, select one image.");
+      this.urlImage = blankphotoPath;
     }
   }
 
