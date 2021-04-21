@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ExpressionManagementService } from '../expression-management.service';
+import { ExpressionManagementService } from '../../services/expression-management.service';
 import { ExpressionsArray } from '../expressions-array';
 
 // url of the blank photo png
-const blankphotoPath = './assets/blankPhoto.png';
+const blankphotoPath = './assets/images/blankPhoto.png';
 @Component({
   selector: 'app-expression-form',
   templateUrl: './expression-form.component.html',
@@ -68,7 +68,6 @@ export class ExpressionFormComponent implements OnInit {
         },
         (error) => {
           console.log("Call API failed");
-          console.log(error);
           this.startLoading=false;
         },
         () => {

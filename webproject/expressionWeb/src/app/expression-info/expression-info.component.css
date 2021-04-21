@@ -1,13 +1,45 @@
 .container-fluid {
-    height: 100%;
-    padding:15px;
-    align-items: center;
-    display: grid;
+    /* display: grid; */
+}
+
+.col-11 {
+    align-self: center;
+}
+
+#imageEmoji{
+    padding: 2%;
+}
+
+img {
+    width: inherit;
 }
 
 /* Temporal solution to grid display not working in small devices*/
-@media (max-width: 769px) {
+/* @media (max-width: 769px) {
     .container-fluid > .row {
         margin-bottom: 20px;
     }
+} */
+/* @property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+
+.progress-bar {
+    animation: counter 1s ;
+    counter-set: num var(--num);
 }
+
+.progress-bar::after {
+    content: counter(num);
+
+}
+@keyframes counter {
+    from {
+      --num: 0;
+    }
+    to {
+      --num: 100;
+    }
+  } */

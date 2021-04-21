@@ -2,13 +2,13 @@
 
     <div class="row" *ngFor="let expression of expressions">
 
-        <div class="col-12">
+        <div class="col-11">
             <div class="progress">
                 <div  [@anime]="{
                 value:animate ? 'start' : 'final',
                 params: {widthtest: expression.probability*100 | number :'1.2-2'}
                 }" id="barra" class="progress-bar" aria-valuemin="0" aria-valuemax="100"
-                *ngIf="(expression.probability*100)< 50; else showWinnerGreen">
+                *ngIf="expression!=winnerExpression; else showWinnerGreen">
                 {{expression.probability*100 | number :'1.2-2'}}%
                 </div>
                 <ng-template #showWinnerGreen>
@@ -19,10 +19,12 @@
                         {{expression.probability*100 | number :'1.2-2'}}%
                     </div>
                 </ng-template>
-                <span class="badge col-1">{{expression.mood}}</span> 
+                <span class="badge">{{expression.mood}}</span> 
             </div>
         </div>
-
-    </div>
+        <div class="col-1" id="imageEmoji">
+            <img src="./assets/images/emoji_{{expression.mood}}.png">
+        </div>
     
+    </div>
 </div>

@@ -39,13 +39,36 @@ export class ExpressionInfoComponent implements OnInit {
 
   animate : boolean = true;
 
+  winnerExpression :Expression = {
+    mood:"",
+    probability:0.0
+  };
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  getWinnerExpression() {
+    if (this.expressions){
+      this.expressions.forEach( 
+        (expression:Expression) => {
+          if (expression.probability>this.winnerExpression.probability){
+            this.winnerExpression=expression;
+          }
+        }
+        )
+    }
+    else{
+      alert("No expressions.")
+    }
+  }
+
+
   // When the photo changes, the probabilities resets
   ngOnChanges(){
+    this.getWinnerExpression();
     this.animate=true;
     setTimeout(() => {
       this.doAnimation();

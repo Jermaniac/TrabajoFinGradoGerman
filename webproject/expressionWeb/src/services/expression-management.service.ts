@@ -17,7 +17,7 @@ export class ExpressionManagementService {
   // AWS/
   // readonly url : string = "http://LINK:9004/getMood";
 
-  readonly url : string = "http://ec2-3-238-116-41.compute-1.amazonaws.com:9004/getMood";
+  readonly url : string = "http://ec2-3-238-95-112.compute-1.amazonaws.com:9004/getMood";
 
   // No options required
   // readonly options = {
