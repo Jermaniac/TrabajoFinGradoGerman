@@ -1,11 +1,10 @@
 
 class ImageUploadService {
 
-    urlApi = "http://ec2-3-236-211-219.compute-1.amazonaws.com:9004/getMood";
+    urlApi = "http://ec2-44-192-30-220.compute-1.amazonaws.com:9004/getMood";
 
     getMood(file) {
 
-        let expressions;
         const formData = new FormData()
         formData.append("photo",file);
     
@@ -19,10 +18,7 @@ class ImageUploadService {
         .then((data) => {
             return data;
         })
-        .catch((error) => console.error(error))
-        .finally(() => {
-          console.log("Success!")
-        });
+        .catch((error) => console.error(error));
 
     }
 }

@@ -1,8 +1,9 @@
-import './App.css';
 import React from 'react'
-import ImageUploadService from './services/image-upload.service';
+import ImageUploadService from '../services/image-upload.service';
 
-import InfoExpressions from './components/InfoComponent'
+import InfoExpressions from './InfoComponent'
+
+import '../styles/App.css'
 class App extends React.Component {
 
   constructor(props){
@@ -24,12 +25,13 @@ class App extends React.Component {
   }
 
   requestPredict= () => {
-    ImageUploadService.getMood(this.state.photoFile).then ( (response) => {
+    ImageUploadService.getMood(this.state.photoFile)
+    .then ( (response) => {
       this.setState ( {
         expressions : response.expressions
       })
     })
-    .finally(() => {
+    .then(() => {
       console.log("Mood obtained!")
     });
   }
@@ -42,7 +44,7 @@ class App extends React.Component {
 
           <div className="row">
 
-            <div className="col-4">
+            <div className="col-12 col-md-4 col-lg-3" id="form">
 
               <div className="row">
                 <h2>Upload the photo you want to be predicted</h2>
@@ -67,7 +69,7 @@ class App extends React.Component {
 
             </div>
         
-            <div className="col-8">
+            <div className="col-12 col-md-8 col-lg-9" id="info">
               <InfoExpressions  expressions={this.state.expressions}></InfoExpressions>
             </div>
 
