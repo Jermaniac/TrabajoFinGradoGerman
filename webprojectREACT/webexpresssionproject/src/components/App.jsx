@@ -27,12 +27,15 @@ class App extends React.Component {
   requestPredict= () => {
     ImageUploadService.getMood(this.state.photoFile)
     .then ( (response) => {
-      this.setState ( {
-        expressions : response.expressions
-      })
-    })
-    .then(() => {
-      console.log("Mood obtained!")
+      if (response){
+        console.log("Call API success!")
+        this.setState ( {
+          expressions : response.expressions
+        })
+      }
+      else {
+        console.log("Call API failed.")
+      }
     });
   }
 
