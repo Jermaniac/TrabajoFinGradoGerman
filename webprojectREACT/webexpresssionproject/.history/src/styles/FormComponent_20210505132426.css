@@ -1,0 +1,30 @@
+
+#form {
+    background-color: lightblue;
+    padding:30px;
+    border: 1px solid black;
+}
+
+#imageEmoji {
+    padding: 5px;
+}
+
+#form > .row {
+    justify-content: center;
+    text-align: center;
+}
+
+#form > .row > div{
+    font-weight: 900;
+    font-size: x-large;
+}
+#form > .row > div{
+    font-style: initial;
+}
+#form >.row > div{
+    font-style: italic;
+}
+
+img {
+    width: 100%;
+}

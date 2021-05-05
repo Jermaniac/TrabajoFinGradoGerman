@@ -1,0 +1,6 @@
+.container-fluid {
+    display: grid;
+}
+.col-11 {
+    align-self: center;
+}

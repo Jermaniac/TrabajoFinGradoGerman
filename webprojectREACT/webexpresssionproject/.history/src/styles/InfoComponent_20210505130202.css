@@ -1,0 +1,12 @@
+.container-fluid {
+    display: grid;
+}
+.col-11 {
+    align-self: center;
+}
+
+#info {
+    background-color: lightgrey;
+    display: grid;
+    border: 1px solid black;
+}

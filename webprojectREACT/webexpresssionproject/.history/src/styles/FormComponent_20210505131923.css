@@ -1,0 +1,25 @@
+
+
+
+#imageEmoji {
+    padding: 5px;
+}
+
+#form > .row {
+    justify-content: center;
+}
+
+#form > .row > h2,div{
+    font-weight: 900;
+    font-size: x-large;
+}
+#form > .row > h2{
+    font-style: initial;
+}
+#form >.row > div{
+    font-style: italic;
+}
+
+img {
+    width: 100%;
+}
