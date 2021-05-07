@@ -1,8 +1,10 @@
 .container-fluid {
     display: grid;
 }
-
-#content {
+.col-11 {
+    align-self: center;
+}
+.row {
     align-items: center;
 }
 #imageEmoji {

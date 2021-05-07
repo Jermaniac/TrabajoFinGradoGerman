@@ -10,7 +10,7 @@ class ImageUploadService {
     const formData = new FormData();
     formData.append(keyFile, file);
 
-    return axios.post( urlApi , formData , { timeout : 5000 })
+    return axios.post( urlApi , formData , { timeout : 2000 })
     .then (data => {
       return data;
     })

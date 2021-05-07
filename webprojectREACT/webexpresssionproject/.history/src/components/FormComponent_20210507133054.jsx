@@ -14,7 +14,7 @@ function FormComponent({ changeExpressions, changePhoto, photo }) {
 
   const requestPredict = async () => {
     const response = (await ImageUploadService.getMood(getPhotoFile));
-    if (response && response.data){
+    if (response){
       console.log("Call API SUCCESS!");
       changeExpressions(response.data.expressions)
     }

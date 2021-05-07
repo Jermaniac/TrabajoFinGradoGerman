@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/InfoComponent.css'
 
-function InfoComponent({ expressions }) {
+function InfoComponent({ expressions, photo }) {
 
   if (expressions) {
     let expressionsFormatted = formatProbabilities(expressions);

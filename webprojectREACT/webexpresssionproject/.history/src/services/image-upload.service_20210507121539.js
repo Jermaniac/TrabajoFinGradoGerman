@@ -10,14 +10,10 @@ class ImageUploadService {
     const formData = new FormData();
     formData.append(keyFile, file);
 
-    return axios.post( urlApi , formData , { timeout : 5000 })
-    .then (data => {
-      return data;
+    return axios.post(urlApi,formData)
+    .then (response => {
+      return response
     })
-    .catch( error => {
-      alert(`Error calling API. \n${error}`);
-    })
-
     // return fetch(urlApi, {
     //   method: "POST",
     //   body: formData,
