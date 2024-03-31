@@ -48,7 +48,7 @@ public class ActivityInfo extends AppCompatActivity {
     // Grafico
     private HorizontalBarChart chart;
     // atributo que indica la ip donde se va a realizar la peticion
-    private String ip = "https://expression-test-2.herokuapp.com/";
+    private String ip = "https://expression-mood-api.herokuapp.com/";
     // variables para distinguir galeria y camara
     private static final int SELECT_IMAGE_GALLERY= 0;
     private static final int REQUEST_IMAGE_CAPTURE= 1;

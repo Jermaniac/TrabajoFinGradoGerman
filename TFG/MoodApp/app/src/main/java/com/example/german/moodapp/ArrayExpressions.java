@@ -10,12 +10,12 @@ public class ArrayExpressions {
         this.expressions = expressions;
     }
 
-    public List<Expression> getExpressions() {
-        return expressions;
-    }
-
     public void setExpressions(List<Expression> expressions) {
         this.expressions = expressions;
+    }
+
+    public List<Expression> getExpressions() {
+        return expressions;
     }
 
 }
